@@ -10,15 +10,15 @@ for a long time. The choice is below:
 
 * [MS Word][] vs [Plain Text][]?
 
-  I like the philosophy *simple is beatutity*, Plain Text is preferred.
+> I like the philosophy *simple is beatutity*, Plain Text is preferred.
 
 * [Vim][] vs [Emacs][]?
 
-  I don't want to provoke war between Vim and Emacs, both of them are powerful
-  and perfect editor, stand for different philosophy and culture. I love both.
-  Here Vim is preferred, since I have been working with Vim for many years,
-  still not master it very well. I believe I can through practise. Also, I
-  will try Emacs someday, it's just time issue.
+>  I don't want to provoke war between Vim and Emacs, both of them are powerful
+>  and perfect editor, stand for different philosophy and culture. I love both.
+>  Here Vim is preferred, since I have been working with Vim for many years,
+>  still not master it very well. I believe I can through practise. Also, I
+>  will try Emacs someday, it's just time issue.
 
 * [Markdown][] vs [Org-mode][]?
 
@@ -47,6 +47,8 @@ Obviously, the ultimate conclusion is `Plain Text + Vim + Markdown`.
 [Markdown]: http://daringfireball.net/projects/markdown/
 [Org-mode]: http://orgmode.org/
 [google org-mode]: http://youtube.com/watch?v=oJTwQvgfgMM
+[VimOrganizer]: https://github.com/hsitz/VimOrganizer
+[vim-orgmode]: https://github.com/jceb/vim-orgmode
 [Pandoc]: http://johnmacfarlane.net/pandoc/
 [Markdown tool]: http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip
 
