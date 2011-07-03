@@ -53,8 +53,7 @@ Obviously, the ultimate conclusion is `Plain Text + Vim + Markdown`.
 [Markdown tool]: http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip
 
 Last but not least, English writting is as preferable as possible. I hope to
-improve my writing skills in English and I hope to reach more people than
-before.
+improve my writing skills in English and reach more people than before.
 
 
 
