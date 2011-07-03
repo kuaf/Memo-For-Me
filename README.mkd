@@ -1,0 +1,59 @@
+
+Memorandum For me
+=================
+
+I am not a wiseman, what's more, with bad memory. In the past few years, I
+often forgot  many things. Here I recode them.
+
+As for authoring and document organization, I was entangled with this problem
+for a long time. The choice is below:
+
+* [MS Word][] vs [Plain Text][]?
+
+  I like the philosophy *simple is beatutity*, Plain Text is preferred.
+
+* [Vim][] vs [Emacs][]?
+
+  I don't want to provoke war between Vim and Emacs, both of them are powerful
+  and perfect editor, stand for different philosophy and culture. I love both.
+  Here Vim is preferred, since I have been working with Vim for many years,
+  still not master it very well. I believe I can through practise. Also, I
+  will try Emacs someday, it's just time issue.
+
+* [Markdown][] vs [Org-mode][]?
+
+  I really like Org-mode - the life in plain text, which is for keeping notes,
+  maintaining ToDo lists, doing project planning, and authoring with a fast
+  and effective plain-text system. It's so crazy when I watched [Google Tech
+  Talk about Emacs Org-mode][goolge org-mode]. I don't find perfect org-mode
+  solution of Vim even though there're two projects woking on it, i.e.
+  [VimOrganizer][] and [vim-orgmode][]. I will try them in the future, not
+  now at least. Markdown is designed to be as readable as possible, intending
+  for web publish. It has been supported in Vim community, mostly important,
+  you're able to do some changes based on other folks' work easily. I want a
+  big plain text recording verything, which means Markdown syntax need to
+  define more than 6 heading levels. The corresponding Markdown-to-HTML tool
+  also has to be tweaked. I'll resolve all of relevant issues in the future,
+  not now. So far, Markdown file is organzied as per category, such as
+  UMTS/LTE, CS, Codebase, E-learning, GTD, etc. [Pandoc][] is used for
+  Markdown-to-HTML tool before I fully master [Markdown.pl][Markdown tool] 
+
+Obviously, the ultimate conclusion is `Plain Text + Vim + Markdown`.
+
+[MS Word]: http://office.microsoft.com/en-us/word/
+[plain text]: http://en.wikipedia.org/wiki/Plain_text
+[Vim]: http://www.vim.org/
+[Emacs]: http://www.gnu.org/software/emacs/
+[Markdown]: http://daringfireball.net/projects/markdown/
+[Org-mode]: http://orgmode.org/
+[google org-mode]: http://youtube.com/watch?v=oJTwQvgfgMM
+[Pandoc]: http://johnmacfarlane.net/pandoc/
+[Markdown tool]: http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip
+
+Last but not least, English writting is as preferable as possible. I hope to
+improve my writing skills in English and I hope to reach more people than
+before.
+
+
+
+
