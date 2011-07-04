@@ -1,0 +1,37 @@
+
+Category
+========
+
+It's not easy to partition each thing in your work and life accurately by
+category. It might have cross point within them. Maybe *tag* is good substitute
+dealing with such thing. However, I don't master how to use *tag* within Vim,
+so far, so imagine it will become of great benifit to category.
+
+## UMTS LTE
+
+All materials for 3G/4G wireless technology are put here.
+
+## Computer Science
+
+It's a camp to computer science resources.
+
+## Codebase
+
+It's interesting Open Source projects I'm working on.
+
+## Geek
+
+I want to become an Absolute-Man, but, but ...
+
+## Life
+
+Here's everything in my life, essay, music, movie, sport, Meizu M9 ...
+
+## GTD
+
+Achieve mind like water, become highly effective people.
+
+## Misc
+
+If I don't know where it should be, put here.
+
