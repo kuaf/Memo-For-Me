@@ -1,0 +1,168 @@
+
+UMTS LTE
+========
+
+
+3GPP 36.331 reviewing -- RRC protocol Specification
+---------------------------------------------------
+
+The RRC (Radio Resource Control) layer is the manager of the radio resource
+and the main controlling protocol in the Access Stratum. It is responsible for
+establishing the radio bearer and configuring the lower layers.  It is also
+handling mobility related functions between the UE and the access network,
+like handover and measurements, broadcasting system information and paging.
+
+
+### 4 General
+
+#### 4.1 Introduction
+
+Preview entire organization of 36.331 specification, where *section 5* is the
+essentials, which cover whole RRC signalling procedure. The *section 6, 7, 8*
+specify which RRC messages is defined, what format they have, as well as how
+to encode RRC messages.  It looks like dictionay used to query variable of RRC
+messages.
+
+[TODO] how about section 9, 10, 11?
+
+
+#### 4.2 Architecture
+
+##### 4.2.1 UE states and state transitions including inter RAT
+
+In LTE system, there're two RRC states: RRC_IDLE state, RRC_CONNECTED state.
+But, notice that RRC_IDLE mode and RRC_CONNECTED mode are often used in some
+books and articals. The difference between them is subtle, you can consider
+them as same things in most cases, just for statement convenience.
+
+**RRC_IDLE overview**
+
+UE shall choose a appropriate Cell from a specific PLMN to camp after power
+on. UE can receive system information and cell broadcast information. Usually,
+UE shall perform register on the first power on, doing so, complete
+authentication and authorization, on the other hand E-UTRAN acquire basic
+information of UE. Thereafter, UE is in IDLE mode till RRC connection set up.
+
+Camping on a cell, UE can do:
+
+*   receive system information
+*   initiate RRC connect request
+*   receive paging message (E-UTRAN only learn which Track Area UE camp on)
+
+Actually, UE has three states with further partition:
+
+*   *NULL* state, enter the state immediately when powering on or can't
+    find any camping cell.
+
+*   *SEL* state, in order to find an appropriate camping cell, need to measure
+    the specific cell or all cells within frequence band, decode BCH, receive
+    system information till camping a cell and enter IDLE state.
+
+*   *IDLE* state, UE have already camped a cell, so it can receive
+    broadcast/multicast data, monitors a paging channel to detect incoming
+    calls, performs neighbor cell measurements and cell selection/reselection
+    and acquires system information. In addition, a UE specific DRX
+    (discontinuous reception) cycle may be configured by NAS to enable UE
+    power savings and mobility is controlled by the UE.
+
+
+**RRC_IDLE procedure**
+
+*   cell selection/reselection
+
+*   monitor paging channel
+
+*   receive system information
+
+*   cell measurement
+
+*   DRX control
+
+
+
+**RRC_CONNECTED overview**
+
+UE shall initiate state transition from RRC_IDLE state/mode to RRC_CONNECTED
+state/mode, triggered by paging or NAS message, after sending RRC connection
+request. Once set up RRC connection, i.e. set up DCCH logical channel (SRB),
+transfer delicated control RRC message over DCCH, UE enter RRC_CONNECTED
+state.
+
+Entering RRC_CONNECTED status, UE can do:
+
+*   receive/transimit data from/to E-UTRAN
+
+*   monitor control channels associated with the shared data channel to
+    determine if data is schedule
+
+*   provides channel quality feedback information
+
+*   performs neighbor cell measurements and measurement reporting
+
+*   acquires system information
+
+*   enable DRX, configured by E-UTRAN
+
+
+Actually, UE has three states with further partition:
+
+*   ACC, random access status. UE recieve connection setup request from
+    upper level, notify MAC to initiate random access procedure through
+    RRC primitive, then uplink sync is set up.
+
+*   CON, normal connection status, which include the radio link procedure
+    between UE and E-UTRAN, such as initial security activation, RRC
+    connection reconfiguration, connection re-establishment, RRC connection
+    release, etc.
+
+*   HO, handover status, which perform intra-frequency, inter-frequency
+    handover, the MobilityControlInfo of RRC connection reconfiguration is
+    used for it.
+
+**RRC_CONNECTED procedure**
+
+*   setup/reconfig/release RRC connection
+*   setup/reconfig/release SRB
+*   security mode activation
+*   HO
+*   recovery for radio link failure
+*   measure control and report
+*   recieve system information
+
+
+##### 4.2.2 Signalling radio bearers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 4.3 Services
+
+#### 4.4 Functions
+
+
+
+
+### A E-UTRAN architecture
+
+
+
+
+
+### B E-UTRAN Radio Protocol architecture
+
+
+
+
+
+
