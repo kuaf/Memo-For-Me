@@ -15,6 +15,7 @@ like handover and measurements, broadcasting system information and paging.
 
 ### 4 General
 
+  
 
 #### 4.1 Introduction
 
@@ -29,6 +30,7 @@ messages.
 
 #### 4.2 Architecture
 
+  
 
 ##### 4.2.1 UE states and state transitions including inter RAT
 
