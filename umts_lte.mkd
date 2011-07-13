@@ -159,7 +159,7 @@ Actually, UE has three states with further partition:
 
 ### A E-UTRAN architecture
 
-![Overall E-UTRAN Architecture with deployed HeNB GW](img/RRC_E-UTRAN_architecture.png)
+![Overall E-UTRAN Architecture with deployed HeNB GW](https://github.com/stevenl/Memo-For-Me/blob/master/img/RRC_E-UTRAN_architecture.png)
 
 
 
