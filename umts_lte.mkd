@@ -15,6 +15,7 @@ like handover and measurements, broadcasting system information and paging.
 
 ### 4 General
 
+
 #### 4.1 Introduction
 
 Preview entire organization of 36.331 specification, where *section 5* is the
@@ -27,6 +28,7 @@ messages.
 
 
 #### 4.2 Architecture
+
 
 ##### 4.2.1 UE states and state transitions including inter RAT
 
@@ -148,6 +150,8 @@ Actually, UE has three states with further partition:
 
 #### 4.3 Services
 
+
+
 #### 4.4 Functions
 
 
@@ -155,6 +159,7 @@ Actually, UE has three states with further partition:
 
 ### A E-UTRAN architecture
 
+![Overall E-UTRAN Architecture with deployed HeNB GW](img/RRC_E-UTRAN_architecture.png)
 
 
 
