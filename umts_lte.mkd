@@ -15,7 +15,7 @@ like handover and measurements, broadcasting system information and paging.
 
 ### 4 General
 
-  
+
 
 #### 4.1 Introduction
 
@@ -30,7 +30,7 @@ messages.
 
 #### 4.2 Architecture
 
-  
+
 
 ##### 4.2.1 UE states and state transitions including inter RAT
 
@@ -134,6 +134,7 @@ Actually, UE has three states with further partition:
 *   recieve system information
 
 
+
 ##### 4.2.2 Signalling radio bearers
 
 
@@ -159,14 +160,93 @@ Actually, UE has three states with further partition:
 
 
 
-### A E-UTRAN architecture
+### A. E-UTRAN architecture
 
-![Overall E-UTRAN Architecture with deployed HeNB GW](https://github.com/stevenl/Memo-For-Me/raw/master/img/RRC_E-UTRAN_architecture.png)
+![Overall E-UTRAN Architecture with deployed HeNB GW](https://github.com/stevenl/Memo-For-Me/raw/master/img/e-utran_arch.png)
+
+![Functional Split between E-UTRAN and EPC](https://github.com/stevenl/Memo-For-Me/raw/master/img/e-utran_epc.png)
+
+
+LTE system include:
+
+*   Core Network (EPC, Evolved Packet Core)
+*   Access Network (eNodeB)
+*   User Equipment (UE)
+
+
+EPC include:
+
+*   MME (Mobility Management Entity, used for signalling process)
+*   S-GW (Serving Gateway, used for data process of internal E-UTRAN user)
+*   P-GW (PDN Gateway, used for data interaction with external E-UTRAN user)
+
+
+Access network, also known as E-UTRAN, consist of eNodeB.
+
+
+Network interface include:
+
+*   S1 interface, i.e. between eNodeB and EPC
+*   X2 interface, i.e. between eNodeBs
+*   Uu interface, i.e. between eNodeB and UE
+
+
+The eNodeB hosts the following functions:
+
+*   Functions for Radio Resource Management: Radio Bearer Control, Radio
+    Admission Control, Connection Mobility Control, Dynamic allocation of
+    resources to UEs in both uplink and downlink (scheduling);
+
+*   IP header compression and encryption of user data stream;
+
+*   Selection of an MME at UE attachment;
+
+*   Routing of User Plane data towards S-GW;
+
+*   Scheduling and transmission of paging messages;
+
+*   Scheduling and transmission of broadcast information;
+
+*   Measurement and measurement reporting configuration for mobility and
+    scheduling;
+
+
+The MME hosts the following functions:
+
+*   NAS signalling security;
+
+*   AS Security control;
+
+*   mobility management in idle mode;
+
+*   EPC bearer control;
+
+*   paging distribution to corresponding eNodeB.
+
+
+The S-GW hosts the following functions:
+
+*   terminate user pane data originated from paging action;
+
+*   offer user pane handover originated from UE mobility.
+
+
+The P-GW hosts the following functions:
+
+*   per-user based packet filtering;
+
+*   UE IP address allocation.
 
 
 
 
-### B E-UTRAN Radio Protocol architecture
+
+
+
+
+
+
+### B. E-UTRAN Radio Protocol architecture
 
 
 
