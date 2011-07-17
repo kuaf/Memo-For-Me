@@ -20,10 +20,1225 @@ Emacs -- an extensible, customizable text editor and more
 ---------------------------------------------------------
 
 
+Git -- a fast version control system designed by Linus Torvalds
+---------------------------------------------------------------
 
+### Git, GitHub and Social Coding -- presented by Tom Preston-Werner
 
+<http://developer.yahoo.com/yui/theater/video.php?v=prestonwerner-github>
 
+**Dav Glass**: I'm Dav from the YUI team. We've got these awesome guys here from
+GitHub: Tom, Scott, and Chris over here. They're going to give us a nice big
+overview of Git, and GitHub, and say how awesome it is.
+The floor is yours.
 
+**Tom Preston-Werner**: Alright, thanks everyone for coming. I'm going to give a
+talk called Social Coding. It's basically going to be a short overview of
+GitHub. And then we've got two more little presentations from these guys, so
+you get a little taste of everything that's going on over here.
+My name is Tom Preston-Werner. My Twitter is @mojombo, and that's generally
+what I go by online, so if you're looking for me, that's the name to use. I
+work at GitHub, obviously; co-founder.
 
+A couple of things we do there at GitHub: GitHub itself is a social coding
+site, as people call it, a place where people can come together and work on
+code, share code, fork other people's code, get copies of it using the Git
+workflow. It just makes the Git workflow and the way Git does things very
+simple, and we try to make it as easy as possible.
+
+Another thing that we do is training. Scott Chacon right here is available for
+training to companies all around the world. He's done training at places like
+Google, and Qualcomm, etcetera, that are starting to use Git internally.
+We also just came out with a product called GitHub FI, which we call the
+Firewall Install, which is a locally installable version of GitHub. So if you
+guys find GitHub really cool, and you want it for your department, we can help
+you get it installed within the company, and you can start using it for your
+own development teams. It's private, it's hosted within the companies, so it's
+not shared with anyone else. Very secure. That's what it's for.
+
+So what are Git and GitHub? Instead of saying a lot of words, I'm going to try
+to show you with little videos how a normal Git workflow kind of works. The
+way that you can be working on code, and someone else can come in, and help
+collaborate on that code.
+
+So me, mojomobo, let's say I want to create a new project, and it's going to
+be aimed at having people develop with me later on. I just want to create it
+and get it out there so that other people can see it, and start working with
+me on it.
+
+I open up my terminal; I got nothing yet. So here's what I'm going to do - I'm
+going to make a new directory, a project that's going to be called Endo. I'm
+going to go into that directory , I'm going to create a little ReadMe file.
+It's just going to say: "Hello World". Next thing I'm going to do is "git
+init", and that's the command that sets up a new Git repository. Because Git
+is distributed, it means that you can work entirely on just your computer; you
+don't have to have a central server anywhere. So running "git init" creates a
+repository that's self-contained on your computer, and only you have access to
+it. But all that happens locally.
+
+Next thing, you're going to add dot. Dot says add every file within this
+directory and underneath it. So that just says: take the content that I
+created, the ReadMe, and stage it into the Git repository. I'm going to do
+"commit -a", which says commit everything that's in this stage, give it a
+little message. And now I've got a Git repository that has that ReadMe in it.
+The next thing I want to do is, I have it locally, but I want to share it with
+the world, so I need to put it somewhere. With GitHub, we make it really easy
+. All you have to do is log in - you have an account - log in and say create a
+repository, give your repository a name and a description. That's all you
+need. Say next. That sets up a place for you on GitHub, and it gives you some
+instructions on what to do next. If you're very new to GitHub, you want to set
+up your username and whatnot, so Git knows who you are - that's at the top
+there.
+
+Next steps are if you haven't done anything yet, and you're creating a new
+repository, it just gives you a little sequence of commands that you can run.
+Just a little hint for you as you're going along. What I did is, I already
+have a repository, and I'm already in it, so all I need to do is run this
+command - this "git remote" command. What that's going to do is add GitHub as
+a remote, and in Git parlance a remote is a server somewhere that is going to
+act as another location that you can push, basically mirror that content to,
+the whole repository and all of its history, and just say: I'm going to push
+this repository somewhere else. I'm creating a new remote, which is GitHub
+here.
+
+Come back to the terminal, paste that in, run that, that sets up the remote.
+Now that remote is available, now I can do a command like this: "git push
+origin master", which is saying take the contents of this repository and push
+it to the remote called origin. And the command previous to that says origin
+is GitHub - that's just a little alias for me to use, the shorthand version of
+that long URL. So "git push origin" and then "master" - master is the default
+branch on Git. It's no different than any other branch, really, it's just the
+one that is created for you by default for you to use in your normal
+situation. I could use a different name, but in this case, I'm just saying
+push up the master branch because that's the only one that I have.
+
+So I'll run that command. That tells me some stuff, tells me it pushed it up
+to GitHub. If I come back to GitHub, and I hit continue, or I refresh the
+page, now you can see that that repository has been pushed up to GitHub, and
+now it's available to the world. So within about 20 seconds I've created a new
+repository, added some content to it, made a commit, made a place for that to
+live on the outside world, on GitHub, and then mirrored that up.
+
+So it's super, super simple to create new repositories with Git, and get them
+published to the world. You don't have to have permissions on a central server
+somewhere or anything like that - you can do all this yourself, and it's very
+simple. You can see in a nice viewer here that the content is here, the ReadMe
+is there, some details about it.
+
+Now let's say that another developer comes along and wants to help me on that
+project. I told him about it, I told him the URL, I said: hey, check out
+mojombo/endo, that's the URL on GitHub. So he can come along and hit that up
+in the URL, just type it in or maybe I sent him a link. He goes to that
+repository. He says OK, this is Mojombo's repository, and now he's going to
+fork it.
+
+Now, forking on GitHub is just a way to make a copy of his own on GitHub that
+he can use for his own purposes, and that he can pull down. So he's going to
+copy this URL - the clone URL for the repository - that he's then going to use
+to pull down the repository locally to his computer. So he types that locally,
+gets a copy that comes down. Now he change the directory to that location. He
+ran a Git status there, which just showed him that that repository was there,
+and the full history, so he has it locally and can start working on it.
+
+What he's going to do is say: hey, this ReadMe is pretty lacklustre, I think
+it needs one that's a bit cooler. So he makes a cooler one, saves that. Now
+he's going to see that it's been changed - Git status lets you see what's been
+changed. Make a little commit message here to say better ReadMe, commit that
+file. And all he has to do now is Git push, or "git master", the same command
+that I had done earlier, to get that content back up to GitHub on his fork. He
+comes back here, and if he refreshes the page, he can see that that content is
+now there. There's two commits up on GitHub now.
+
+If he wants to tell me he made these changes, he's going to issue what's
+called a pull request. So he comes to this little interface here, types a
+message to me - this is directed to me, Mojombo - and sends that off. What I'm
+going to be able to do is, on my end, I'm going to see that come in. Here's me
+coming back, saying hey, someone sent me some work that I might be interested
+in. He sent me a pull request, so let's look at that.
+
+Now it's back to Mojombo, that's me, on my account. I come into my little
+inbox here and I see a message that says someone sent you a pull request.
+There's a couple of different ways I can look at that content and review it,
+and see if I want to pull it back in. Here's the message - I can click on the
+commit itself and see the code in reality, I can go back to my fork of it and
+then look at the network graph.
+
+The network graph is a nice easy way to see what all content is available, and
+who did it. Right here you can see there's two forks, each horizontal line
+here is a different repository, and because of how Git works, we can map how
+they connect. Because each commit points to its parent, we can map connections
+across even different repositories. These are two different repositories, but
+because of how Git works, I can show you exactly where someone branched off
+and started doing extra work. So I like to think of this view as a bit of a
+to-do list, where I can go down to each repository and see what's new, what I
+need to address in each repository, in each fork repository. So this is one of
+the views that I use the most on GitHub to see what other people are doing to
+contribute to my software.
+
+If you click on one of those little dots there, then you can see the diff of
+the commit that was made; you can review it that way. And if you go to what we
+call the fork queue, you can see an alternative view that shows you in a more
+list mode what people have done. You can go in here, you can select commits
+individually, and you can actually cherry pick those - which is to say, choose
+a specific commit, or a number of commits, and apply each of them to a branch
+of your choice in your repository.
+
+You can do that all through the interface. You don't even have to go to the
+command line, you don't have to pull those commits down locally or anything if
+you want to use that interface. A lot of people use it to pull in things like
+documentation, little fixes; things you don't have to pull down and test
+locally. If you just want to pull them in real quick, then you can do it
+through the interface. The way that Git is built makes it possible for us to
+create tools like that. Git's very flexible on the backend.
+
+So now I've reviewed this content, and I want to pull those changes back in.
+I'm not actually going to use the fork queue in this instance; I need to test
+some stuff maybe, I want to pull it down locally and do the merge with Git
+locally. So I come back to the command line here.
+
+We have a tool called the GitHub Gem, and it's a little Ruby Gem that we
+created that makes it easy to script more complex commands. It scripts some
+interactivity with GitHub to make things a bit easier for you, as a user. In
+this case, it's installed, and it's called just GH, short for GitHub, that's
+what we call it, a command to call it. This command, GH Network Fetch, is
+going to go to GitHub and pull down every commit from every repository that is
+in that network of the project. So whatever's on GitHub, I'm going to pull it
+down locally so I can work with it without typing a zillion commands. Just one
+command and I get everything. Then I can deal with it and merge it locally.
+Here it says it fetched everything from Mojombo and everything from TPW;
+everything in the network. This command here, "gh network commits", shows you
+basically the same view as the fork queue. It just says here are the commits
+that are available, and a little display of their message and whatnot. In this
+case, I see this commit, I say hey, that ReadMe's pretty cool, I want to merge
+that in.
+
+All I have to do is copy the SHA. With Git, every commit is addressed by a 40
+character SHA-1, and this is just seven of those letters. Generally there's
+not any conflicts, so you can use just seven letters of it as a shortcut. Here
+I copied those seven letters, and I run a command called "git merge". I paste
+in that SHA, and what it did here locally is apply that merge, so pull in that
+commit, merge it into my branch� Because I'm on master branch, and I pulled in
+some commits from a remote branch. So those exist in the repository, but not
+in my working directory, my working place. When I do a merge, that's going to
+pull them into my master branch.
+
+So I've just added another commit to my master branch which this other guy
+contributed. If I run "git log" then you can see visually that there's now two
+commits: my first one, and then a better ReadMe which has been applied right
+on top.
+
+Now, all I have to do again is "git push origin master" to take that new
+content that I have, that new commit I have, and push it up to GitHub. If I go
+back to GitHub and I hit refresh, then you'll see right here that in my
+repository, in my fork, now that commit also exists there. If I go to the
+commits tab I can see, similar to the Git Log, that that commit is listed
+there.
+
+On the network graph, now, because I pulled in his commit into my repository,
+his isn't going to be shown anymore, because I already have that commit. The
+network graph only shows new commits that do not exist in my repository, so
+once it's merged in and pushed on top of my branch, on my fork, then that's
+the only place I'm going to see it. He still has it on his. The TPW repo still
+exists. It's just that he has nothing new that I need to look at. That's why I
+think of it as a to-do list, because you go down it and as you merge things in
+they'll disappear from this view. You can see, there, that that was the TPW
+commit.
+
+So that's a short overview of movies that make GitHub very easy, very simple.
+They get way more complex than that.
+
+We had a question here?
+
+[Audience member makes inaudible comment]
+
+Tom: Yes, so the question is what happens to cherry picked commits in the
+network view? Is there a way to hide them, do they go away automatically?
+Right now they don't. Right now cherry picked commits, because they have a
+different timestamp and whatnot, they have a different SHA, which is what
+you're alluding to. So they'll still appear.
+
+Now, what we would like to do is, in the fork queue there's a way to ignore
+commits. We'd like to carry that information over to the network graph, so
+that you can ignore things. We're working on this. The network graph is a
+complex piece of code, and it'll take some time to work in, but it's slated
+that we're going to do something like that, because I want that functionality
+as well. So yes, in the future we'll be able to do that.
+
+Alright. Our goal at GitHub, in general, is to make version control awesome,
+and we do this in a few ways. We like the ideas of social networking. We think
+that developers in general work more effectively when they work together. So
+if we can get a group of people in the same place, and have them collaborate
+on code, and be able to see each other and what everyone is doing, then this
+makes us all more effective. So let's take the ideas of a social network and
+add on top of that code hosting for Git, and let's create a site that makes it
+easy to share and collaborate on code. That gets us GitHub.
+
+So how are we going to do that? The social aspects that we have - there are a
+few of them, but one of the main ones is that GitHub is user-centric. In the
+URL, you notice that it's GitHub.com/mojombo/endo. Note that anyone can create
+a repository called Endo. It's not like on SourceForge where there can only be
+one Endo project. On GitHub, there can be as many as there are users. Everyone
+can have their own project name that, if they want. That's how forks work:
+there's a mojombo/endo and tpw/endo - they're both the same project, and they
+both have the same name, but they're scoped by the user. So we put users
+first. We say: you can create a repository named whatever you want. And people
+can fork that and have their own copy of that repository, so that deciding
+which is the canonical repository, and who's in charge, becomes a social issue
+instead of a technical issue. That's where we think that belongs. So it's
+user-centric.
+
+We have a way to follow users, and we have a way to watch repositories. In
+your dashboard you can then see lists of all the people that you're watching
+and the actions that they're doing. If they make commits, if they edit a wiki,
+whatever they're doing you can see that. You can get an RSS feed of that. You
+can see it in a bunch of different ways. It just allows you to keep tabs on
+what you find important in that eco-system.
+
+We also have the notion of profiles. So you can go to someone's profile page
+and see a list of their repositories, when they've been working on them -
+there's a little graph to say when they made commits to them, so you can keep
+tabs on who's working on what, and to what degree, and if their responsible
+for a project. It makes it easy to see who's responsible for code in certain
+places.
+
+On the code hosting side, some of the things that we found very important
+were: we wanted to make the creation of repositories as simple and easy as
+possible, so that it's a single step with only one required field, just a
+name. From there, you put your code up and start doing what you want. We think
+the barrier to entry for creating repositories should be basically zero.
+First class forking, meaning that forking is something that you do that's
+normal; it's not frowned upon. Nobody's going to go crazy if you fork their
+project, because if they do, it probably means they're going to contribute
+back to it. So forking is all good.
+
+Pull requests, which we went over before, we want to make those easy to send,
+so you can inform people when you've changed stuff.
+
+Then a whole layer of powerful visualizations, like the network graph, and we
+have all other kinds of graphs available for you to visualize and look at your
+code from a higher view to see what's going on, and who's working on them.
+A couple of stats to say that we know that this is working, and we know that
+this is something that people like. Right now there's about 90,000 unique
+repositories on GitHub. That's not including forks, that's just unique,
+totally different repositories, representing different projects. 10,000 of
+those were created in the last 30 days alone. So we're experiencing a
+tremendous amount of growth right now. 12,000 of those projects have been
+forked at least once, meaning that someone came in and said hey, your project
+is really cool, I want to contribute. So they forked it, and they intend to
+work on it.
+
+In all, there's about 135,000 repositories, some of those being forks and some
+of those being originals, on GitHub. So we've created this huge broad
+eco-system of repositories and coders on GitHub that are creating software in
+different ways than they used to, in a much more close-knit, free way than
+before.
+
+One last thing I wanted to go over. This is an example of how GitHub is
+working. You can see here a project called Click to Flash, which is a Safari
+plugin that allows you to hide all flash; it replaces it with a little thing,
+and then you click on it if you want to see that flash content. So it speeds
+up your browser, etcetera. It's kind of nice if you don't want to see flash
+content all over the place. This project was on Google Code before, and they
+moved over to GitHub. Since then they've experienced a ridiculous amount of
+contributions from people coming in. So on the right here, where the arrow is
+right now, you can see that - and this screenshot is actually from a couple of
+months ago, so it's even more than this now - at the time, there was 319
+people who were watching this repository, so they get updated when things
+change. And there's 32 forks of it. So 32 different people came in and made
+forks and now they've started writing their own code on top of this to
+contribute stuff back.
+
+If we scroll down, you can see in his ReadMe, he says: here's where the Google
+Code release was, we came over to GitHub, and now you've got this huge list of
+people that have contributed via GitHub. Because the barrier to entry,
+forking, is so easy, people come on and say hey, I wish Click to Flash did
+this feature. They come on, they fork it, and now it's done.
+
+You can really see this in evidence on the network graph. The one I showed you
+before was very simple, but here's one that's a bit more complex because of
+all the commits and collaborative code that's come in. You see all the people
+on the left, and you just scroll around and can see all these commits from
+different people on different repositories, on different branches. You can
+explore this and see what's going on, and the maintainer can come in here and
+use this to figure out which of these commits are relevant and should be
+merged in.
+
+This just goes to show you how blossoming this code collaborative stuff can
+get when people come in and they see they're allowed to change stuff. They
+don't have to have permission to start changing stuff, they just get their
+work done, and tell the guy later on what they did, and have him have a really
+easy way to merge that in.
+
+So that is a little phenomenon we call the GitHub effect. Which is, when you
+make your stuff easy to work on, and you give permission to work on it, then
+they'll actually help you work on it. That's what we call the GitHub effect.
+And that was my presentation. Thank you. And next we have Chris.
+Chris Wanstrath: I am Chris Wanstrath, and that's my URL with a picture of
+someone on it and a lack of information.
+
+How many people are already using Git? OK, great. I'm going to talk a little
+bit about Git Workflows. This is about Git, I use the work Git a lot, but
+really this applies to any of the distributed version control systems that are
+out there right now.
+
+A little bit about me � I play guitar. I have one like that. Mine's much
+prettier. I'm from Cincinnati, but I currently live in San Francisco. I
+started out as a lowly paid consultant, and then I got a job at CNET, which is
+now owned by CVS, and I left there to become a highly paid consultant, and
+then I founded GitHub with Tom. And that's where I work today.
+So I'm going to talk about Git; a little presentation called the Lean, Mean
+Distributor Machine, and I'm going to see how slow I can make myself talk,
+because I talk kind of rapidly, inadvertently.
+
+The first thing I'd like to talk about when talking about Git Workflows is the
+history of version control and where Git fits in, and where it came from. For
+anyone who's never heard of version control, or if my mom's watching this,
+what version control is is like Wikipedia, but instead of being for
+Encyclopedia articles and information it's for code. You can use it to see
+what other changes people have made, you can use it to inspect the changes
+they've made and get alerts on them, and you can contribute your own changes.
+Using something with version control people can be on the same page, they can
+see what you're doing, and you can see what they're doing.
+
+So Git is a version control system. Who uses it? Yahoo! That's it. That's the
+only one that matters. These are some of the companies that are using it
+either for Open Source stuff, or internally, that we know about. And then
+there's a couple of big Open Source projects that are using it. PHP just moved
+to Subversion from CVS, but they have an official Git mirror on GitHub, which
+is pretty cool. They have something like 25,000 revisions in their repository,
+so they discourage people from mirroring it themselves. They just wanted to
+use the official Git repo.
+
+The history of open source version control. I'm not going to talk about Git
+Keeper or any of the proprietary ones, because who cares about that stuff. The
+first version control system that we care about is RCS. It came out in the
+'80s, and as I understand it � since the '80s was like 100 years ago, this
+could be totally made up � a professor had some students that were
+collaborating on a C Compiler, and they needed a way over the summer to get
+their changes to each other. So they devised this RCS system that let them
+version individual files. They could have multiple versions of a single file,
+they could see who made what change and when. So what they did was they threw
+a bunch of these little RCS databases into a directory, and they worked on
+their compiler that way. And it worked great.
+
+Ten years later, this thing called CVS came out: the Concurrent Version
+System. What this let you do was, they hacked in publications so anyone could
+clone a repository; they could pull it down, I could look at your project
+without you giving me the keys to the kingdom, which is the only way you could
+work with RCS. It also let multiple people work on the same files at the same
+time. And the big innovation was it versioned directories.
+
+What CVS really was, was a way to manage our RCS repositories, RCS databases.
+I don't know if it still works that way, but originally it was just glue that
+brought a bunch of RCS files together under one director, or a bunch of
+directories. So it's like a cabin. A cabin's kind of like a hut, it's just a
+little bit better. It's still kind of crappy though.
+
+Ten years after that we got a new system, which we call Subversion. Subversion
+was like a better CVS � it did all the things CVS did, and all the spots that
+were sort of pain points for CVS, such as deleting directories, adding new
+ones, anonymous authentication, Subversion did really well. It cleaned up all
+the things that CVS did poorly, and it added new stuff that was cool as well.
+These three version control systems, they're all centralized. That's important
+because Git, and the other ones in its class, are not. So what does that mean?
+A centralized version control system, you have a server, and then you have
+committers � us, the code monkeys. What happens is, I, code monkey A, commit
+to the server, and then code monkeys B and C, which are Tom and Scott, pull
+down my changes from the server, and they get them, and this is how we do the
+collaboration in the Wikipedia model that we were talking about.
+
+We've all realized � at least, all of us Git and Mercurial and Bazaar users �
+in the past couple of years that this is bad. It's like a spare tire; it
+works, but you don't want to go too far on it, because it'll screw you over.
+Why? Why is this bad? Well, in this model, the server is your babysitter. You
+can't do anything without the server's permission. You can't do an SVN log,
+you can't get a diff of a commit � everything you do goes over the wire, which
+is bad if the server goes down, or you're not connected, or you just want to
+get some speed out of it. It actually is pretty slow.
+
+The other thing that's bad about it is low visibility. What I'm talking about
+here is seeing what everyone else is doing, being on the same page. Subversion
+and those systems, they don't offer a really good mechanism for that, they're
+just for versioning code. There's no real bigger picture there. Which the
+distributed version control system, kind of by accident, figured out how to
+make better.
+
+We used Bugzilla when I worked at CNET. It was great because I Googled for
+Bugzilla, and I wanted to find a screenshot of it that was just like a
+caricature of it - it was so complicated. This was the advanced search page on
+the Bugzilla homepage, so I didn't even need to find someone making fun of
+Bugzilla, I could just find an advertisement and I think it speaks to itself.
+So we used this, and we plugged Subversion into this, and it worked really
+well because we had people dedicated full time to manage Bugzilla. But that's
+rare � we were a big company, Yahoo!'s a big company. For guys like us in a
+small company, Bugzilla would just be a nightmare.
+
+What would happen if someone would make a commit and everyone would get
+emailed a diff of the commit. So we'd all be on the same page. Of course,
+we're in a 25 person development team with three different websites, and we're
+all getting emails from everyone, because that's how you get good visibility.
+So what I'd end up doing is just throwing them all in my spam folder, and
+never looking at anyone else's stuff, because a lot of the emails I was
+getting were Greek, they were just unintelligible to me. With Subversion and
+these other systems, you kind of have to set up this all yourself. So there
+was someone setting up the emails, and once they set it up and they got it
+working, they didn't want to mess with it, so fine tuning it and listening to
+a junior developer was just not part of the question.
+
+I spent a lot of time throwing away the junk, and I found that the emails that
+were for me, and the commits that I cared about, should have been the only
+things I was receiving. I shouldn't have to sort through that.
+If you're lucky, though, you can use Trac, which is really cool, and it has
+RSS and there's a little bit more visibility. But Trac is something that you
+install locally, and you have to set up and manage yourself, and you have to
+do all this administrative work which you don't want to be doing. It takes
+away time from the coding.
+
+The other problem with the centralized model and the Subversion kind of idea
+is that your workflow is single-threaded. It can only do one thing at a time,
+ever. If there's a big fire or an emergency when you're in the middle of
+writing a feature, this can be a problem. I know anyone who's using Subversion
+has had the instance where there are files you're working on, they're dirty,
+you need to make a bug fix. So you commit and make changes around the dirty
+files, making sure that you don't commit them because you just want to focus
+on these other files. That's crazy. That's work that programmers shouldn't
+have to do. You need a smart tool for that to do it for you. You should have a
+smart tool for that. So this is something that distributed version control
+does really well.
+
+Another part of the single-threaded workflow is that when you do a branch,
+when you do an alternate line of development and you work on it, like a big
+re-write, at the end of it you get into this thing called Merge Hell, which is
+where you have a big meeting, you sit there for three hours, you figure out
+what needs to be merged and who's going to do it, you delegate the guy who
+didn't even work on the project to merge the new changes, and then at the end
+of the meeting he's writing code that he doesn't even know about, fixing bugs
+in systems he's never even seen before, or understand really.
+Usually, that guy quits a couple of weeks later. I was that guy one time. That
+slide kind of summarizes my feelings on doing a contracting job, being the
+merge hell guy.
+
+The other thing about this centralized model is all of your experiments, all
+your embarrassing code, all the things you want to play with, they're all
+public. So if I want to work on this crazy new feature, but I don't want
+anyone else to see it yet because I'm sort of insecure about it, I'm not sure
+if it's even going to go anywhere, with Subversion if I want to commit in it's
+going into the repository. Or else I have to set up my own repository and keep
+it private somewhere.
+
+So what I end up doing is not version controlling my code, which is not cool
+because I'm experimenting. Maybe I did something by accident earlier on that I
+want to bring back later. Version control is always a good idea. Everything's
+public, everyone sees everything you're doing, you don't want to commit so you
+don't. And that's just for work stuff; for Open Source it's extremely hard for
+the same reason. You don't want to be committing to a repository on your
+experimental branch, having people download it and use it, and telling you
+they have bugs and something you don't even care about.
+
+What is the answer to all this? I think it's distributed version control, and
+Git. Git was invented by this guy, Linus Torvalds, who built Linux, which I
+think you guys might use here. If RCS is a hut, and CVS is a cabin, and
+Subversion is a house, I would say Git is a castle, or a ninja, or Shaquille
+O'Neal.
+
+[laughter]
+
+So what's different? Not Shaquill O'Neal. This is the model we were talking
+about before, that RCS and CVS and Subversion all had in common. In Git, you
+don't have a server and commiters, you just have servers. It's distributed,
+this is the crux of it right here.
+
+So you sort of have the same workflow, or you can have the same workflow,
+where I'm working on a code, I make a commit, other guys pull it down. But
+because all of us are servers, it means I can commit to code monkey B, and
+code monkey B can commit code to me. We can share changes at this other level.
+So instead of checking out code, you make a clone of a repository, you make a
+clone of a server. That means that if GitHub explodes � which has been
+happening a little bit lately � or if your Git server goes down, it doesn't
+matter. You have a copy of the code with you at all times.
+
+Because you have a full copy of your repository with you, the idea of Git
+going down gets less and less scary, because you could have GitHub internal
+server, and S3 base backup Git server, you can push all three of them at the
+same time on every single commit, and not worry about it. That's not a special
+feature or a hack, that's just the way distributed version control works.
+There's a lot of cool little self hosted and public hosted Git sites that you
+can use. A lot of people push to the different Git hosting sites, and we
+encourage that. Yes, put your code on as many sites as possible, including
+GitHub.
+
+Another word for clone or a copy in this new language that we're trying to
+invent is fork. It does seem like anarchy if everyone's just pushing and
+pulling to everyone else. This is kind of what I'm up against first � how do
+you know what to get? It's crazy.
+
+But over time, a couple of sane workflows have evolved. The first one is
+called Anarchy. In this workflow you remove the server and you make everyone
+appear, and then you take away commit access from everyone else � so I can no
+longer push to other people, I can only pull from them. What happens is I pull
+from him, he pulls from me, and they pull from each other, and we all just
+share commits. And because this is the way Git's designed, where we're all
+servers, it's not that big of a deal as long as I know his end point, his URL
+import or his IP important, and he gives me permission to read from him, I can
+pull down his code, I can merge it in, I can manage the different servers. And
+this is all built into Git's interface � it's pretty cool.
+
+So when you're working with something like GitHub, like Tom was saying
+earlier, GitHub is really just one of these servers. It could easily be one of
+you guys serving Git repository right now. On GitHub, if I want to add a patch
+to Scott's project, the workflow that Tom just showed, and what that does on
+the server is it makes a full clone of his repository. The same thing would
+happen when I downloaded it. Then I would make my change, you would pull from
+me, that sort of thing.
+
+The second workflow is the one we call Blessed. Blessed is a little bit nicer
+than Anarchy because Anarchy doesn't really scale; it's just kind of crazy,
+everyone's pushing and pulling from each other. If you have a real project and
+you're doing releases, it doesn't work because you need to care about
+essential line development and get it on the same page.
+
+So the Blessed repository is the same idea as Anarchy, but you're like this is
+the canonical repository. And it's sort of a social thing. Scott started the
+project, Scott is the one doing all the work on it, his repository is the one
+that all of us forkers go to to see changes. I don't really need to look at
+the other forks, unless I want to, so I just focus on Scott. I trust him to
+pull in changes that he thinks are relevant, and I'll get them from him. It's
+the same thing as the Anarchy workflow except Scott is sort of the point man �
+we can still push and pull changes to each other, but we don't really want to.
+One of the things GitHub and other Git hosting sites do is they open up this
+other sort of pushing and pulling to each other. It's cool to talk about
+Anarchy, and all of us can have Git repositories and be serving them, but if
+Tom makes a change to a project of mine, and then he's like: oh yeah, I'm
+serving it from my computer, it's like: what, where? I don't know how to get
+to that. OK, set up a VPS, set up a Git Daemon, open up your router, do port
+forwarding... Instead, just throw it up on GitHub, put it up there somewhere.
+So it's not really as anarchic as you might imagine, because there's still
+limitations with firewalls and hassle, and it's much easier just to use a site
+and click a button.
+
+In the business world, this works really great for dealing with contractors,
+because with Blessed repository you let your contractor fork it, and then he
+never gets right access to your canonical repository � to the GitHub code, or
+to the Yahoo! code. Instead, they say I've finished my work, I send a pull
+request or whatever, and you check it over and you pull it in.
+
+There are bunch of us working on TicGit, like I said, but Scott's would be
+Blessed. We would just watch his changes and pull them down.
+
+Ruby on Rails, this is how it works. There's Rails/rails, and that's the
+canonical one. Everyone watches it. Some people working on Rails, they have
+their own fork on it where they do experimental stuff, and they share with
+each other. But at the end of the day, this is the repository you watch, this
+is where the packages get built from, that sort of thing.
+
+Click to Flash works this way too. Tom was talking about it before. Click to
+Flash, Wrench took over the main repository when he moved over to Google Code,
+and there's a bunch of forks � I think 78 now, I was just checking while Tom
+was talking � and his is the one that you follow. He is in charge of pulling
+out all the forks, managing the patches. You can look at all the other ones if
+you want, but you're better off just looking at his because he's pretty
+proactive in managing it.
+
+The next one's Lieutenant. Does anyone know who this guy is? The Lieutenant
+model is the one the kernel uses. You still have the Blessed repository, and
+you have this other layer of Blessed repositories that we call Lieutenants,
+because that's what the people in the kernel calls them. And the Lieutenants
+are in charge of sub-systems � so for a system like the kernel, you're not
+going to have a Scott Chacon keeping the whole thing in his head, managing it,
+because it's a really big project and there's very specific things like
+drivers, and networking, that you might not even know about, even though
+you're the person that started it.
+
+So instead you just delegate it to the experts. The experts are in charge of
+dealing with all the little forks and patches, reviewing them and pulling in
+their changes. And then, this guy wants to work on the networking stack. He's
+going to go to this Lieutenant, because he's the networking guy, go off of his
+fork, and then ask the Lieutenant to pull his changes in. Once the Lieutenant
+has signed off on them, the Blessed person can just say OK, I trust you, you
+know more about networking than me, I might look them over but I'll pull in
+your changes. Then it gets into the sort of� I went a little nuts there with
+the arrows.
+
+[laughter]
+
+Like I said, this is the kernel's model.
+
+And the final one, and one of my favorite things about distributed version
+control systems, is Centralized. Git can still do the Subversion workflow � I
+mean, that's how we use it as GitHub. There's one central repository, we all
+have right access to it, we all push to it. So there's nothing that Subversion
+can do that Git can't do. But there's stuff Git can do, a few things, that
+Subversion can't do.
+
+This is the traditional babysitter model: there's a server, all of us push and
+pull to the server, we never know about each other. The deploys come from the
+server, we might even have a staging server, and it's cool because with Git,
+when you're talking about branches, you can actually pull from the staging
+server. Instead of having a staging branch and a production branch, what you
+can do is you can push up your branch working on bug fix 38, and you can
+deploy that to staging, which is really neat and pretty easy to do. That's how
+we do it.
+
+Like I said, with the branching it's cool because it's multi-threaded � you
+can be working on a bug, and then you made a new branch, or a really important
+feature request comes in, a P1, you can just switch back to the main line. You
+can make a new branch, you can work on the feature, go back to the main line
+again, merge in the changes, push it up, and then go back to your bug, pulling
+in the feature you just made, and continue development. It's really easy;
+that's just one of the things you do very often in Git.
+
+Like I said, it changes the idea of staging servers. Now you can embrace the
+cloud thing that's going on, and have staging servers that are all tied to
+specific branches, and put them out in the cloud, and that sort of thing.
+Small teams. Some of these charts I don't even know what I was thinking. I
+even have notes, and that's insane.
+
+[laughter]
+
+With GitHub - Tom sort of talked about this, but - one of the things we try to
+do is make all this visible, in a way that other things like Trac have done in
+the past. We want to up the ante, and tie all these distributed servers and
+forks and chaos into a nice interface; make it simple, and kind of make it
+fun. This is why we have service hooks and that sort of thing where you can
+integrate with existing services. Instead of us trying to be the best bug
+tracker, the best everything, we just let you write your own service hooks,
+contribute them, and integrate with other sites. And we're all about the
+visibility. Like I said, I hated getting diff emails, I hated Bugzilla. We
+want you to use what you're comfortable with, and what you like, and make it
+simple and make it work.
+
+I'm going to talk very quickly about some of the Git support, because it
+always comes up, you know: "I would love to use Git but Subversion just works
+so well with Eclipse," and that sort of thing. Git is still young, so it's
+still growing, and there's not as much support, and it's not as developed or
+mature an eco-system as something like Subversion, but there's still some cool
+stuff to look for.
+
+If you use TextMate, there's a project plus extension that gives you the sort
+of 'stuff is going to be deleted, stuff is dirty, stuff is being added' view
+into Git that you're used to with something like, I don't know, SVN. The Git
+TextMate bundle is available on GitHub, and that lets you do showing logs,
+committing and creating branches, just from TextMate. There's EGit, which is a
+plugin for Eclipse, which is cool because it includes a reimplementation of
+Git in Java, called JGit. So it lets you do some crazy stuff. There's DVC,
+which is a sort of interface to all of the version control systems that's
+available for EMacs, you can use Git if you're familiar with DVC, the same way
+you use CVS or Subversion.
+
+Why would you want to do that when there's Magit, which is the great of all
+the Git IDEs, and the one I use. It lets you do crazy stuff in EMacs with Git.
+If you use OSX, there's an Open Source program called GitX and it does all the
+things that you would expect. It also lets you do stage commits, which are a
+great Git feature, and I don't think that it's talked about a lot. What that
+does is it lets you look at a diff, changes you made to a file, and you can
+commit just parts of the changes. A lot of times, what happens is I'll be
+working on an Open Source project and when I make my change I'll realize that
+my editor stripped out all the extra white space. So there'll be all these
+changes I made that I don't want to contribute. I'll go into the staging mode,
+I'll pick just the code I want, I'll say: this is my commit, I'll submit that
+commit up, and I'll just say: forget about it, they can edit the white space
+on their own. It's really cool for doing that. Or, if you're managing a bunch
+of things in one file, and you have some sort of debug statements that you
+don't want to commit, you can sort of tiptoe around those, and just commit the
+meat.
+
+There's Git-GUI, which GitX aims to be a cross platform version of. This comes
+with Git, I think, if you install it on LSX or Linux. You can just run Git-GUI
+and fire it up. And then there's GitNub, which is pretty simple. I don't think
+it's in active development anymore, but it's an interesting Git interface
+that's pretty pretty. It's simple, though. I don't know, I just like looking
+at it.
+
+A search on Git, when I wrote the slides, returns 3,000 Git related projects.
+I think the only other term that probably has more results is Twitter, with
+all the APIs and that sort of thing.
+
+Very quickly, the other things you can do with Git. It's a content addressable
+file system, and the kernel guys, all they know how to write is kernels. So
+when they wrote a version control system, they basically wrote like another
+kernel. Or a file system. So it means you can do really cool stuff with it.
+We have a pastebin, where if you're talking to someone on an IM and you want
+to show them a little snippet of JavaScript, you can go in here, paste the
+JavaScript, get some colors, and just send them the URL instead of sending
+over the code. And the way that this works, instead of keeping the code in the
+database, we keep all the code in Git. So each paste that you make is a full
+Git repository � we just make it on the fly, and you can fork it, you can
+clone it down. I do this a lot for simple batch scripts.
+
+I have a bunch of stuff that I keep in Gist, and I'll version it, I'll work on
+the batch script. I don't want to have it as a project in GitHub, I just want
+to keep it somewhere simple and push to it. I'll also do this with private
+Gist. You can do it dot mark down or tech style, and I'll work on little
+documents with people. You know, like a to-do lists, or ideas. We'll iterate
+on the same project really quickly with Gist, because it's just a Git
+repository.
+
+This is my slide, this is the future. I like it because this looks like it's
+not really the future, I think that's a real one. But this kind of stuff is
+really exciting to me, because now that the tools are getting easier with our
+site, and other sites, Git's interface, the other DVCSs, we're starting to see
+some really creative uses like Gist, of this really, really intense and well
+designed tool.
+
+One of which that's going on right now are books � lots of people are writing
+books on GitHub, using Git collaboratively. So they'll put up the code in the
+book, anyone will be able to fork the book, add whatever chapters they want,
+and then they'll publish the book from the main [xx]. This is the Merb
+Internals Handbook, and then there's a Grails Internals Handbook. Scott Chacon
+today published his Pro Git A-Press book, creative commons on the internet.
+People have already forked it and started working on Ukrainian and Portuguese
+translations. So Scott did another website � a couple of sites, actually �
+that he put GitHub, and people have forked them and translated them. One of
+them's into 14 languages. Yeah. I didn't even know there were that many.
+
+[laughter]
+
+With stuff like writing� I mean, we're just talking about versioning plain
+text. You can get a lot crazier. People have talked about iPhone apps that are
+just note-taking apps that actually back up to Gist. Cool stuff like that.
+For more information on Git, you can go to Git-scm.com. And that is it. Does
+anyone have any questions?
+
+Amazing. Thank you very much.
+
+[applause]
+
+Scott Chacon: I work at GitHub. I have a bunch of Git related projects � my
+thing is github.com/schacon, so there's a lot of Git related stuff.
+
+I run Git-scm.com; I'm actually the maintainer for this site, so if you do go
+here as a resource, there's some really good resources on here. If you go to
+here to download Tarwhals and stuff, and you see something particularly wrong
+with the site, you can email me directly, because I'm responsible for it.
+I wrote the P-code PDF Git Internals, if you want to learn more about some of
+the backend stuff. And like Chris mentioned, I wrote an A-Press book that's
+going to print right now, called Pro Git. And it's creative commons license,
+so you can read the whole thing online at Pro-Git.org, if you guys want to
+learn more about Git, or reference certain chapters for tips and tricks and
+stuff like that. Most of the stuff I'm going over today is referenced in
+detail in the book, so if it's interesting to you, you want to share it with
+somebody, this is a good place to look it up.
+
+My email address is schacon@gmail.com; if you have any problems with any of
+this stuff, I am to blame for all of it.
+
+Really quickly: what Git is in 60 seconds. Git is an open source Distributed
+Version Control System that is implemented as a Direct Acyclic Graph, made up
+of commit objects that point to snapshots, that is implemented as a content
+addressable filesystem, where every object in it is namespaced by SHA-1. You
+can do branches very easily, and they're implemented as pointers into this
+directed graph.
+
+You know what? I'm just going to go through this. I had notes where this
+actually made sense, and they're missing on the thing, so I'm just going to go
+over what it is really fast. You guys can follow it if you can.
+
+[laughter]
+
+Alright, it's OK because I'm running out of time anyway.
+
+So, Git tips and tricks, some stuff that you can do. I'm going to go over a
+couple of things. One is Data Munging, some data manipulation stuff that you
+can do; some debugging tools that you have in Git; and some ways that you can
+customize Git to be, hopefully, more useful to you.
+
+Data Munging. One thing is rewriting history, so one way that you can rewrite
+history is to modify the last commit. So if you committed and you forgot a
+file, or something, you forgot to add it to start tracking, and you want to go
+back and just replace your last commit, you can add it and then run "git
+commit -- amend", and that will just replace the last commit you did on the
+branch that you're on with whatever your index staging area looks like right
+now. So if you wanted to undo a commit and just rewrite it, or rewrite the
+commit message or something, you can use "git commit -- amend". So that's very
+helpful.
+
+How many of you guys rebase? You use rebasing? OK, so some. This is just a
+description of what rebasing is, since it's somewhat unique to Git. This is
+sort of what the Git object history looks like � it's a directed graph of
+commit, so each commit points to the commit that came immediately before it.
+If you fork, if you create a branch and do some work on that, and then go to
+your master branch and do some work on that, then you have this forked history
+where you have two different heads.
+
+There's a couple of different ways that you can put these together. You can
+merge them together. So, say, if you're on the topic branch, you say "git
+merge master", it creates a new merge commit and all that work is sort of
+incorporated.
+
+The other way that you can do it is you can create a linear history. So, if
+you are on the topic branch and you say "git rebase master", what it'll do
+instead is it will look at what you gave it on command line, whatever branch
+you gave the command line - which is master, which points to C5 � it'll find
+the first common ancestor, which in this case is going to be C1. So wherever
+you branched from. It'll take all of the patches that were introduced, all of
+the commits that introduced work on the side of whatever branch you're on when
+you run this command, and it will extract each one into a patch and stick it
+on a stack. So it'll basically run something like this. It'll get the patch
+that was created between C2 and C3 and it'll create a diff file, then it'll
+stick it on a stack that you have.
+
+And then the same thing for each one all the way down the line. In this case
+we have two. It'll take this one, it'll put this on the stack as well, and
+then it'll go to whatever branch that you put on the rebase line there, and it
+will start applying these off of the stack, on top of that. So you'll get the
+same work that was introduced in C2, but it'll reintroduce it on top of
+whatever commit that is.
+
+So that's basically what rebase does. So now, instead of having a merge
+commit, you end up having what is closer to a linear history, because it takes
+all the work that was done in one line of work, and then just replays all of
+that work on top of anywhere else that you want to do it. So that's what
+rebase does.
+
+There's a couple of useful things you can do for this. One is if you're
+working on a branch and the head moves - so, somebody else has committed in
+the meantime - and you want to supply a patch series to them, over email, you
+probably wouldn't do this internally but you might if it was an Open Source
+project. You can rebase on top of the new heads, so that you make sure all of
+your commits, all of the patches that you're going to send in, apply cleanly
+to where they are right now. So you can work on some topic branch, and then
+rebase them on top of wherever the current project is.
+
+The other thing is if you're using Git SVN - I don't know if you guys are
+using Subversion, or if some of you are might be using Git SVN - you have to
+keep a linear history because Subversion only has a linear history, so you
+have to rebase in order to de-commit.
+
+Some fun things you can do that you may not know about if you don't use
+rebase, or even if you do, are that you can rebase onto somewhere else. So if
+you want to transplant a topic branch, you can have a couple of commits� Let's
+say you create a branch called server, you do a commit, you create a branch
+off of that called client, you do some more commits, you go back to server and
+do some more commits, you go back to master, do some more commits. So now you
+have all of these branches. You want to move the client work on your master
+branch - but just the client work, not any of the server related changes,
+right? The problem is, you created the client branch off of the server branch,
+rather than off of the master branch, so the idea is how do I just take these
+and move them up to master?
+
+You could try "git rebase master", but what that's going to do is find the
+first common ancestor, which is C2, and then identify all the patches down one
+stream; that includes C3, and you don't want that. So you can't do that. You
+could try "git rebase server", which will work properly to find the right
+commits, but it'll put them onto the wrong place. It'll put them on top of the
+server branch instead.
+
+So what you can do is say: "git rebase server --onto master", and that will
+figure out the patch theories based on that one, and then move them to the one
+that you do after "--onto". This way you can just transplant the topic branch.
+So any branches that you have in your history, you can just take them and move
+them with rebase, which is kind of cool. You can redo your history pretty
+easily this way.
+
+Then you can checkout server, and then just do a normal "git rebase master" to
+move just the server stuff on top of where the client stuff was. So now you
+have a nice linear history, and you can just transplant topic branches that
+way. It's kind of cool.
+
+You can also transplant a topic branch just by dropping a pointer. So if you
+only wanted C4 and C5 to move onto master and not whatever was in C3 - say it
+was like a whitespace change, or something you're not ready for, but C4 and C5
+you do want to push out. If you do a merge it's going to take everything
+downstream. If you merge in the branch it takes all of the changes. But if you
+just want C4 and C5 then you can move them independently.
+
+What you want to do is create a new branch at C3, just put a pointer there, so
+that the rebase logic will work properly. You can say "rebase newtopic"
+because the first common ancestor will be itself, and "--master" will move
+those those two up. So if you want to take parts of a topic branch and move
+them independently you can do this. Now newtopic only points to this one, so
+you can merge that in later, or you can rebase that later, and it will just
+take C3.
+
+So rebase actually gives you a really cool way of using your topic branches as
+patch queues. You can think of each commit as sort of a patch on the patch
+queue, and you can move them around your history independently. It's kind of
+cool. That's really difficult to do with a lot of other version control
+systems.
+
+The other thing you can do is fix a commit server back. If you did some work
+and you want to change some commit that's in your history, you can use "git
+rebase �i", and that's an interactive mode of rebase, so it gives you a sort
+of script of what it's going to do, and then it allows you to change that
+script somehow. If you have a history with a bunch of commits and you actually
+wanted to modify this somehow � you wanted to add a file to it, or you wanted
+to change a commit message, or you wanted to do something like that � you can
+do that.
+
+I don't know if you guys are familiar with this syntax, but you can just use
+the SHA instead of that for that particular commit if you want to. What it's
+going to do is it's going to modify everything upstream, since all of the
+commits point to their immediate ancestors and checks them. Anything you
+change � like, if I go back and change this, I'm going to change everything
+that's upstream from it, everything that came after it, because they all
+reference it. Git is cryptographically strong that way, so it's hard to modify
+stuff without modifying everything upstream.
+
+But if I run this, which is the parent of that commit, then it'll give me a
+nice little script. It'll put me into an editor and give me all the commits
+that I have in reverse order, because that's the script; that's the order it's
+going to apply them as. Right now, it's all picked, so if I exit out of it
+this it'd just be the same as just running git rebase; it'll just do one, two,
+three and it'll be over.
+
+If I modify stuff so I can edit ones, I can make it stop in the middle and
+then I can edit something. Or I can squash some together if I actually want to
+take two or three commits and squash them down into one. I can do that.
+
+So if I wanted to edit that one, I can say edit, and it'll apply it and stop
+and allow me to commit amend, so change the last one that was applied. So I'll
+edit the files, I can run "git add". To stage stuff I can run "git commit
+--amend" to modify whatever it was that I stopped. And then "--continue", and
+that'll do two and three, so it'll just apply the next one and the next one.
+So if you wanted to do a rebase but you wanted to stop and change something in
+the middle, "rebase �i" will allow you to do that. That's kind of cool.
+
+It will allow you to squash commits together as well. If I wanted all three of
+these to be one commit, I can do "rebase �i" and then just do the first one as
+pick, and the next two as squash, and it'll squash them all down into one
+commit. So it's kind of cool. If you guys have a code review thing that takes
+each patch and people have to code review it, and you said oops, I forgot to
+do this commit or something, and you want to squash that down, then this is
+good way of doing that. You can use "rebase �i" and it'll put you in the
+editor with the three commit messages, and you can make one unified commit
+message, which is kind of cool. Then you end up with something like this, and
+you can push that off.
+
+But there's some problems with this, with the rebasing stuff. I'm not going to
+go through this because I'm running out of time, but basically what you don't
+want to do is rebase something that you've already pushed out and somebody's
+based work on. If you've already pushed some work out, and somebody's actually
+done a merge with it, you don't want to rebase that work and then push it out
+again, because what you're going to do is when they push out you're going to
+get your original line, and then your rebase line in your history as well.
+You'll see commits twice and it'll be really weird, because you're just cherry
+picking them onto another thing, basically.
+
+Another interesting tool is Filter Branch. This will modify history in mass,
+so you can modify everything. If you accidentally have, like, password.txt or
+something in your history, and it was in like 18 commits. Or you put the wrong
+email address in when you did the import, or something, and you want to go
+through and change your email everywhere, you can use Filter Branch to do
+that.
+
+There's a bunch of different options. One is "tree-filter", which will check
+out each version of the whole project or whatever you give it. This is from
+head down, so from the last commit all the way down. And remove filename from
+every single one; so you can do remove password.txt and it'll go through and
+rewrite every commit. This is like a massive rebase, and every shot changes,
+the whole history changes. But if you're doing an import or something, and you
+forgot to take out some big file, you had install files or something, you can
+use this to clean your whole history, which is kind of cool.
+
+You can change your email, if you want. This will change the email of every
+single commit, not just yours, but this is sort of a simple example of doing
+that sort of thing. It'll go through and change every email of every commit to
+that email address instead. So if you're doing an import and you need to clean
+it up, Filter Branch is a good way of doing mass changes while you commit
+data.
+
+Alright, so how many of you use submodules? There's a bunch of problems with
+submodules, and this is another way of doing it. You know what� I'm not going
+to do this either. Sorry.
+
+Oh, if you're interested, that's the URL: go to tinyurl.com/braidgit. If you
+hate submodules and you want a different way of doing it, this guy wrote a
+really cool way of doing subtree merging instead of submodules, which is
+really nice.
+
+I'm going to do patch staging, because this is helpful to a lot of people, and
+Chris mentioned this earlier. If you say "git add �p", it will allow you to
+stage hunks of files. So if you edited a file � for those of you who use Git,
+you might know that there's a staging area, so you can go stage files that you
+want to include in your next commit. You can also stage parts of files that
+you want to include in your next commit. So if you did a bunch of
+documentation changes at the top half of a file, and changed some methods in
+the bottom half of a file, and you only want to commit the documentation
+changes and not the method changes yet, you can actually stage parts of your
+file.
+
+So if you say "git status" and you see that I changed, say, the Gem spec file,
+and I say "git add �p", what it's going to do is go into this interactive mode
+where it shows you each hunk of the file diff, and says do you want to stage
+this particular hunk? So I can say yes, I want to stage this version change,
+but no I don't want to stage this stuff that I've done because it's not quite
+ready yet. I can put no there. Then if I run "git status" again, it'll show me
+that I have modified both a staged and unstaged modification to the file. So
+it's not like I made the first change and staged it, and then made the second
+change. If I commit only the first half of the file that I had done, it
+actually goes into that commit and gets shared with people.
+
+So you can cherry pick changes out of a file to include in a craft commit,
+which is a pretty cool way of doing it. If you've been coding all weekend or
+something, and you have a whole bunch of files changed all over the place, and
+you want to make three really nice, easily code reviewable commits out of
+them, "git add -p" is a really nice way of saying I want these parts of these
+files to go in the first commit, and then these parts to go in the second
+commit, and so on, so that it makes sense when people are looking at the
+commits as individual units.
+
+Now, some debugging tools really fast. Some of these are really cool. If
+you've ever used SVN Annotate, you know what that does: it goes through and
+shows you who edited each line of a file last, which commit was responsible
+for changing each part of each line of a file. Basically, what question you
+ask is: who did this? And then you say: oh crap, it was me. And then you don't
+send a flame out to the mailing list saying: why did somebody make this
+change? Because it was me.
+
+So if you get blamed on some file, it'll show you the last commit to touch
+each line, and who that person was that commited it, and when they did it. So
+you can go through and if you've figured out where a bug was introduced, you
+can see who introduced it and when it was introduced. So that's pretty cool.
+One of the things that Git does that Subversion does not is that you can put
+this "-C" in. And what the "-C" will do is it will not only tell you who
+changed each line, but if a code fragment was copied from another file at some
+point, it won't tell you the person who did the refactoring, it'll tell you
+the person who originally wrote in the original file.
+
+In this case, I had a file called Git Server Handler, and I split it into
+multiple files, one of which was Git Pack Upload. I took all of this code
+right from the original file, so I had refactored that from Git Handler Server
+into Git Pack Upload. I can see that I haven't changed it since I copied it.
+Normally it would show these lines as when I did the copy, because that's when
+it was introduced in the file, but I can see that this actually came from
+another file originally, and that this is when I had actually originally
+written those lines. Which is really cool. I don't know of any other tool
+that'll do that for you.
+
+Another nice thing is bisecting: you can do a binary search for where a bug
+was introduced. So if you have a commit that's broken � it has broken unit
+tests, or it was broken on the website, and you know that particular feature
+wasn't broken as of version 1.0 release, you can have Git help you figure out
+where that was introduced if you don't actually want to go through the code
+and try and figure out where that was. So if you say "git bisect start" it'll
+start the engine, if you say "git bisect bad", it'll assume where you are
+right now is a bad commit. And then "git bisect good". And you can do, like,
+V1.0, or if you have a specific commit that you know it worked at, you can put
+in the SHA of that commit, and that tells it the range. I know it was good
+here, I know it's bad right here. And you can give it a V2.0 for bad, or
+whatever. If you leave it off, it'll just assume whatever commit you're
+currently on.
+
+It'll say, OK, there's 12 commits in between where it's bad and where it's
+known to be good, so I'm going to check out the middle one. It just checks out
+the middle one in your working directory. And you can test it; you can say,
+OK, this one is good. This one doesn't have the bug yet. So it goes alright,
+and takes the difference, and checks out the middle one again, and you can run
+your unit tests or whatever and say that one's bad. And it'll say alright,
+checks out the middle one, and it just keeps doing that until you just say
+bad, good, bad, good, until it says alright, here's the commit bad broken that
+introduced whatever change you're looking for. It's almost always PJ Hyett, so
+if you're not working with him then don't worry about that.
+
+[laughter]
+
+But it does give you the thing, and then you just say "git bisect reset" and
+it resets you back to where you began. But at least now you have the commit.
+You know where it was introduced. You could say "git revert" and it will apply
+the reverse diff; it's like a reverse cherry pick, it applies the opposite of
+whatever's introduced the change. So if you had this SHA you could say "git
+revert" and that will just undo everything that commit did. It might fix it.
+Some other things you can do to customize it. For those of you using it on the
+command line, which I assume is most of you, you can turn on the colors if you
+haven't already. The terminal coloring is really nice. You can say "git config
+--global", and the configuration option is "color.ui". There's a couple of
+different things you can do for it. There's true, and there's always. Always
+will always do the colors, true will do the colors if the output is to a
+terminal. So if you're redirecting it into another file, it won't put the
+terminal color stuff. So I would recommend doing true. But it's nice, it gives
+you some nice coloring for the logs and the diffs and stuff.
+
+Custom merge tool. If you guys have a merge tool that you're used to, and you
+like� I'll give an example of Perforce. So if you use Perforce visual merge
+tools, it's a fairly nice visual merging tool. By default, when you have a
+merge conflict in Git it'll put in Subversion style merge conflict markers.
+But you can fire up another program to do the merge conflicts for you, or to
+help you out. So if you download the Perforce stuff - this is a free program -
+you can have something that looks like this, instead of having the conflict
+markers and having to do it manually.
+
+The way that you set that up is you set up a program that'll launch it, like
+that - there's an example of this in Pro-Git.org book as well, if you want
+these code samples - and then tell it: I want to use my merge tool as EXT
+merge, which is this new script I set up. This is the command to send the EXT
+merge for it to work properly. And don't trust the exit code, because the exit
+code of the Perforce thing is crap, so it just asks you instead, when it's
+done.
+
+And that's it. It ends up, if you run those three commands, you end up having
+this three sections in your Git config. Then if you do a merge and it says
+there have been issues with your merge, all you have to do is type "git
+mergetool", and it'll fire it up and have everything all already set up for
+you. So you can just use the Perforce thing to solve the merge. If you like
+that, you can do that. You know, you can also use KDiff3, or Open Diff, or
+Emacs Diff, or whatever you like to use as a merge tool, if you have a merge
+tool that you like.
+
+Some other interesting things you can do with Git. Have any of you used Git
+Attributes? Or know about it? OK, so there's some cool things you can do with
+Git Attributes. Git Attributes allows you to diff binary files, for one. If
+you want to diff an image, normally if you have an image that was changed in
+the commit, and you run Git Show on the commit or something, or Git Diff,
+it'll show you something like this. It can't diff the image for you. So it
+just says it's a binary file, and I can't do it, but they differ; they're
+different somehow.
+
+But you can tell it how. If you can make that file type into something that is
+diff-able, you can tell Git how to do that. For example, if you run all your
+PNG files, or all your image files, through Exiftool, you can diff at least
+the exif information. So if you say all my PNG files, I want the diff to use
+exif first, it's like a filter before you run the diff on it, to turn a binary
+file into a text file you can diff, and you just put that in a file called Git
+Attributes and put that in your project� Then you have to set it up. This the
+strategy, and this actually tells it the command to run. Then this is normally
+what Exiftool normally outputs. So if you actually run Git Diff and a file is
+changed, you can get an output that's more like this. You can see, alright,
+the file size has gotten bigger, and the image dimensions change. So you don't
+actually see the diff, but you see something. This is better than A and B
+differ. It's kind of cool.
+
+You can also do Word documents. If you put in this and tell it to pipe Word
+docs through strings, that'll at least give you something. You can get Word
+documents, at least some sort of diff on them by piping them through strings
+first, which is kind of cool. But, I mean, anything you can think of that
+would turn a binary file into something that's diff-able, you can set up
+through the Git Attribute stuff.
+
+Some other things you can do with filtering stuff. If you want to pipe all
+your .C files through indent first or something, you can set that up so that
+when you're checking them in, it actually runs all your .C files through
+indent. Then when you check them out, you can run it through Cat or something.
+That sort of automatically runs your certain types of files through a program.
+Some other things you can do is date expansion. Like RCS type style date
+expansion. If you set up an "expand_date" program - in this case, it takes the
+last commit and puts the date and just replaces the string with this string -
+you can make Git automatically run that. So what you do is you set up a smudge
+filter, and a clean filter which does the opposite, it just strips that out.
+If you put that into a file, and then again you have to set up this Git
+Attributes. You say: run the date filter on everything, and that's the file
+that I just set up. Then add it and commit it, and then just remove the file
+and check it back out again. Then you get this nice string that goes in there.
+So you can do any type of keyword expansion that way, if you can come up with
+some way of doing it. So this is kind of cool. There's check-in and check-out
+filters that you can set up on your files. I did one thing, I think
+schacon/media if you're interested. It'll look for files that are really large
+and you can set up, like, .movie files or something. So if Git sees .movie
+files and they're too big, it will instead SVP them to a server and then put
+in a bookmark. Then when you check it back out, if it sees the bookmark, it'll
+look on the server for something and SVP it down. So you don't actually
+check-in movie files, you can offload them to an FTP server or something.
+Which is kind of cool.
+
+So that's it. Just some interesting things that you can do with Git that are
+kind of difficult to learn about. But you can read about all that stuff on
+Progit.org, which has the full version of my book, and it's all creative
+commons licensed, so if you find anything wrong with it, go ahead and email
+me. But it has examples of all that type of stuff. There's some really cool
+things you can do with Git that are a little bit more difficult to learn.
+So that's it. Thank you.
+
+[applause]
+
+Note: there're many stuffs about Git on http://tom.preston-werner.com/
 
 
